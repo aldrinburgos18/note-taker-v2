@@ -1,0 +1,14 @@
+{
+  "name": "note-taker",
+  "version": "2.0.0",
+  "description": "An application created with Express.js that can be used to write and save notes",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
