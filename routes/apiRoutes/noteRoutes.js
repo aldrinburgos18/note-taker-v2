@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { findById } = require("../../lib/notes");
+const { findById, validateNote } = require("../../lib/notes");
 
 const notes = require("../../db/db.json");
 
@@ -17,6 +17,15 @@ router.get("/notes/:id", (req, res) => {
     res.json(result);
   } else {
     res.sendStatus(404);
+  }
+});
+
+router.post("/notes", (req, res) => {
+  //set id
+  req.body.id = notes.length.toString();
+
+  if (!validateNote(req.body)) {
+    console.log("Note is not propery formatted!");
   }
 });
 
