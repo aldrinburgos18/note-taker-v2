@@ -1,6 +1,6 @@
 const router = require("express").Router();
 
-const { findById, validateNote } = require("../../lib/notes");
+const { findById, validateNote, createNote } = require("../../lib/notes");
 
 const notes = require("../../db/db.json");
 
@@ -26,6 +26,9 @@ router.post("/notes", (req, res) => {
 
   if (!validateNote(req.body)) {
     console.log("Note is not propery formatted!");
+  } else {
+    const note = createNote(req.body, notes);
+    res.json(note);
   }
 });
 
