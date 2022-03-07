@@ -15,6 +15,6 @@ app.use(express.static("public"));
 app.use("/api", apiRoutes);
 app.use("/", htmlRoutes);
 
-app.listen(3001, () => {
+app.listen(PORT, () => {
   console.log(`Server is now live on port ${PORT}!`);
 });
